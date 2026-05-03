@@ -1,33 +1,148 @@
 
 
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>PHOENIX</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background-image: url("https://raw.githubusercontent.com/Vishwadeep2026/PHOENIX/main/PWBG.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: white;
-    }
-  </style>
-</head>
 
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENTITY</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle at center, #0b1220 0%, #05080d 100%);
+    overflow:hidden;
+    font-family:'Orbitron',sans-serif;
+    position:relative;
+}
+
+/* futuristic grid */
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+    linear-gradient(rgba(0,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,180,255,0.04) 1px, transparent 1px);
+    background-size:45px 45px;
+}
+
+/* animated scanline */
+body::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:2px;
+    background:rgba(0,255,255,0.18);
+    animation:scan 5s linear infinite;
+}
+
+@keyframes scan{
+    from{top:-5%;}
+    to{top:105%;}
+}
+
+.panel{
+    position:relative;
+    padding:80px 120px;
+    background:rgba(10,18,30,0.82);
+    border:1px solid rgba(0,255,255,0.22);
+    backdrop-filter:blur(10px);
+    box-shadow:
+    0 0 40px rgba(0,180,255,0.08),
+    inset 0 0 30px rgba(255,255,255,0.03);
+}
+
+/* corner frame */
+.panel::before,
+.panel::after{
+    content:"";
+    position:absolute;
+    width:60px;
+    height:60px;
+    border:2px solid #00d9ff;
+}
+
+.panel::before{
+    top:-2px;
+    left:-2px;
+    border-right:none;
+    border-bottom:none;
+}
+
+.panel::after{
+    bottom:-2px;
+    right:-2px;
+    border-left:none;
+    border-top:none;
+}
+
+.main{
+    font-size:92px;
+    font-weight:900;
+    letter-spacing:12px;
+    color:white;
+    text-transform:uppercase;
+    text-shadow:
+    1px 1px 0 #00bfff,
+    2px 2px 0 #0099cc,
+    4px 4px 12px rgba(0,255,255,0.18);
+    animation:pulse 2.8s ease-in-out infinite;
+}
+
+.sub{
+    margin-top:24px;
+    text-align:center;
+    font-size:16px;
+    letter-spacing:6px;
+    color:#8be9ff;
+}
+
+.status{
+    margin-top:14px;
+    text-align:center;
+    color:#ffffff88;
+    font-size:12px;
+    letter-spacing:4px;
+}
+
+@keyframes pulse{
+    0%,100%{
+        opacity:.88;
+    }
+    50%{
+        opacity:1;
+    }
+}
+</style>
+</head>
 <body>
 
-
-  <script>
-    window.$zoho = window.$zoho || {};
-    $zoho.salesiq = $zoho.salesiq || { ready: function(){} }
-  </script>
-
-  <script id="zsiqscript" src="https://salesiq.zohopublic.in/widget?wc=siqfe53d02ccc41d544092c2e491b81f9a2913de4d05136932d88276df6d47b17aa" defer></script>
+<div class="panel">
+    <div class="main">ALT+E</div>
+    <div class="sub">PRESS TO ACTIVATE ENTITY</div>
+    <div class="status">SYSTEM READY</div>
+</div>
 
 </body>
 </html>
-
